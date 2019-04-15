@@ -14,7 +14,9 @@ phases:
       - echo Installing dependencies
       - apt-get update -y
       - apt-get install build-essential libssl-dev npm -y
+      - npm cache clean -f
       - npm config set strict-ssl false
+      - npm config set registry="http://registry.npmjs.org/"
       - npm install
   build:
     commands:
