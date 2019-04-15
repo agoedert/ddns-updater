@@ -9,7 +9,7 @@ AWS tools, AWS codepipeline and AWS codebuild
 ## Description
 The pipeline it's intented to update the push of our code to a new image on the registry on REPOSITORY_URI (buildspec.yaml)
 
-## Local Build
+## Local Build with CodeBuild
 - first build the Docker Image from [Local-CodeBuild](https://github.com/aws/aws-codebuild-docker-images.git)
 ```
 git clone https://github.com/aws/aws-codebuild-docker-images.git
@@ -27,3 +27,10 @@ docker build -t aws/codebuild/java:openjdk-8 .
 - create config.js file base on example
 - create your keyfile.jon download after create a service account
 - setup a Task on AWS ECS  pointing to the latest image on the Repositoy indicated in REPOSITORY_URI
+
+## Build locally and run
+- create config.js file base on example
+```
+docker build -t ddns-update/task .
+docker run ddns-update/task:latest
+```
