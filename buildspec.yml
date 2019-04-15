@@ -9,21 +9,13 @@ phases:
       - REPOSITORY_URI=359342069205.dkr.ecr.us-east-2.amazonaws.com/ddns-updater
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
-  install:
-    commands:
-      - echo Installing dependencies
-      - apt-get update -y
-      - apt-get install build-essential libssl-dev npm -y
-      - npm cache clean -f
-      - npm config set strict-ssl false
-      - npm config set registry="http://registry.npmjs.org/"
-      - npm install
   build:
     commands:
       - echo Build started on `date`
       - npm test
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
+      - docker run $REPOSITORY_URI:latest npm test
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
