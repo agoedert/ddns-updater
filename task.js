@@ -1,16 +1,19 @@
 'use strict';
+const configfile = require('./config');
 var request = require('request');
 // [START dns_list_zones]
 exports.updateRecord = async function () {
   // Imports the Google Cloud client library
   const {DNS} = require('@google-cloud/dns');
 
+  const configRecord = configfile.configRecord;
   // Your Google Cloud Platform project ID
-  const projectId = 'flowing-sign-123213';
-  const KeyFilename = 'keyfile.json';
-  const zoneName = 'valenzuelafernandez'
-  const dnsRecordName = 'tw.valenzuelafernandez.cl.';
-  const dnsRecordtype = 'A';
+  const projectId = configRecord.projectId;
+  // Path to Key File API Calls
+  const KeyFilename = configRecord.KeyFilename;
+  const zoneName = configRecord.zoneName;
+  const dnsRecordName = configRecord.dnsRecordName;
+  const dnsRecordtype = configRecord.dnsRecordtype;;
 
 
   // Creates a client

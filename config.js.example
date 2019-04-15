@@ -1,0 +1,8 @@
+const configRecord = {
+  projectId: '',
+  zoneName: '',
+  KeyFilename: '',
+  dnsRecordName: '',
+  dnsRecordtype: ''
+};
+module.exports = {configRecord};
