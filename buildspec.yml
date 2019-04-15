@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Installing dependencies
       - apt-get update -y
-      - apt-get install npm -y
+      - apt-get install build-essential libssl-dev npm -y
       - npm install
   build:
     commands:
