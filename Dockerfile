@@ -4,4 +4,4 @@
     COPY . .
     RUN npm install
 
-    CMD ["node", "/app/run.js"]
+    CMD ["node", "/usr/src/app/run.js"]
