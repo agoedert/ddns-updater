@@ -24,12 +24,13 @@ docker build -t aws/codebuild/java:openjdk-8 .
 
 ## AWS account(Production) Build
 - Create a [pipeline](https://aws.amazon.com/blogs/devops/build-a-continuous-delivery-pipeline-for-your-container-images-with-amazon-ecr-as-source/)  with a clone of this source
-- create config.js file base on example
+- create config.js file based on example
 - create your keyfile.jon download after create a service account
 - setup a Task on AWS ECS  pointing to the latest image on the Repositoy indicated in REPOSITORY_URI
 
 ## Build locally and run
-- create config.js file base on example
+- create config.js file based on example
+- create your keyfile.jon download after create a service account
 ```
 docker build -t ddns-update/task .
 docker run ddns-update/task:latest
