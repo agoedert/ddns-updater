@@ -23,7 +23,7 @@ docker build -t aws/codebuild/java:openjdk-8 .
 ```
 
 ## AWS account(Production) Build
-- Create a pipeline with a clone of this source
+- Create a [pipeline](https://aws.amazon.com/blogs/devops/build-a-continuous-delivery-pipeline-for-your-container-images-with-amazon-ecr-as-source/)  with a clone of this source
 - create config.js file base on example
 - create your keyfile.jon download after create a service account
 - setup a Task on AWS ECS  pointing to the latest image on the Repositoy indicated in REPOSITORY_URI
