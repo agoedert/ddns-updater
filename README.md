@@ -2,7 +2,7 @@
 ddns-updater it's an job intented to update one regitry on google cloud DNS, with 
 AWS tools, AWS codepipeline and AWS codebuild
 
-## Pre-requisites
+## Prerequisites
 - [Set up authentication with a service account](https://cloud.google.com/docs/authentication/getting-started) for api usage of Google Cloud DNS
 - install Docker on your local maquine
 
@@ -22,4 +22,5 @@ docker build -t aws/codebuild/java:openjdk-8 .
 ./codebuild_build.sh -i aws/codebuild/java:openjdk-8 -a ./artifcats -s ./
 ```
 
-## AWS account(Production)
+## AWS account(Production) Build
+
